@@ -1,0 +1,18 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+
+    cout << "Hello\nWorld\n";
+
+    cout << "A\tB\tC\n";
+
+    cout << "ABC\bD\n";
+
+    cout << "Using endl" << endl;
+
+    cout << setw(10) << "Hi";
+
+    return 0;
+}
