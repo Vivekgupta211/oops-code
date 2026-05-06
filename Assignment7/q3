@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+float area(float b, float h) {
+    return 0.5 * b * h; // right triangle
+}
+
+float area(float a) {
+    return (1.73/4) * a * a; // equilateral
+}
+
+float area(float a, float b, float c) {
+    float s = (a+b+c)/2;
+    return sqrt(s*(s-a)*(s-b)*(s-c)); // isosceles/general
+}
+
+int main() {
+    cout << area(5,4) << endl;
+    cout << area(5) << endl;
+    cout << area(5,5,6);
+}
