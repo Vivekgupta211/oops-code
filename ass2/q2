@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int roll;
+
+public:
+    void setData() {
+        cin >> name >> roll;
+    }
+
+    void display() {
+        cout << name << " " << roll << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.setData();
+    s.display();
+}
