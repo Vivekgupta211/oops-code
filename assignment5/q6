@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class Book {
+public:
+    string title, author;
+    int price;
+};
+
+class Textbook : public Book {
+public:
+    string subject;
+
+    void input() {
+        cin >> title >> author >> price >> subject;
+    }
+
+    void display() {
+        cout << title << " " << author << " " << price << " " << subject;
+    }
+};
+
+int main() {
+    Textbook t;
+    t.input();
+    t.display();
+}
