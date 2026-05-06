@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+namespace A {
+    int x = 10;
+    void show() { cout << "A\n"; }
+}
+
+namespace B {
+    int x = 20;
+    void show() { cout << "B\n"; }
+}
+
+int main() {
+    cout << A::x << endl;
+    cout << B::x << endl;
+
+    A::show();
+    B::show();
+}
