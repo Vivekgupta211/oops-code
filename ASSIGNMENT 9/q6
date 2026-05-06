@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    fstream file("hello.txt", ios::out);
+
+    string str = "Hello World";
+
+    for(int i=0; i<str.length(); i++) {
+        file << str[i];
+        cout << "Position = " << file.tellp() << endl;
+    }
+
+    file.close();
+
+    fstream f("hello.txt", ios::in | ios::out);
+
+    f.seekp(6);
+
+    f << "C++";
+
+    f.close();
+
+    cout << "Word replaced";
+
+    return 0;
+}
