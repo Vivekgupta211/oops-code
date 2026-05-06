@@ -1,0 +1,93 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+
+    // Create file A-Z
+    ofstream fout("AZ.txt");
+
+    for(char ch='A'; ch<='Z'; ch++) {
+        fout << ch;
+    }
+
+    fout.close();
+
+    // (a) Read 10th character using seekg()
+    ifstream fin("AZ.txt");
+
+    fin.seekg(9);
+
+    char ch;
+
+    fin.get(ch);
+
+    cout << "10th character = " << ch << endl;
+
+    fin.close();
+
+
+
+    // (b) Overwrite 5th character using seekp()
+    fstream file("AZ.txt", ios::in | ios::out);
+
+    file.seekp(4);
+
+    file << 'X';
+
+    file.close();
+
+    cout << "5th character overwritten with X" << endl;
+
+
+
+    // (c) Find file size using tellg()
+    ifstream fin2("AZ.txt");
+
+    fin2.seekg(0, ios::end);
+
+    cout << "File size = " << fin2.tellg() << " bytes" << endl;
+
+    fin2.close();
+
+
+
+    // (d) Read last character using seekg()
+    ifstream fin3("AZ.txt");
+
+    fin3.seekg(-1, ios::end);
+
+    fin3.get(ch);
+
+    cout << "Last character = " << ch << endl;
+
+    fin3.close();
+
+
+
+    // (e) Create data.txt and perform pointer operations
+    ofstream fout2("data.txt");
+
+    fout2 << "This is file handling program";
+
+    fout2.close();
+
+    ifstream fin4("data.txt");
+
+    // Move pointer to 10th byte
+    fin4.seekg(10);
+
+    // Display current position
+    cout << "Current position = " << fin4.tellg() << endl;
+
+    // Display remaining content
+    cout << "Remaining content:\n";
+
+    while(fin4.get(ch)) {
+        cout << ch;
+    }
+
+    fin4.close();
+
+    return 0;
+}
