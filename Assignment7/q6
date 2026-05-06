@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class STRING {
+public:
+    string s;
+
+    STRING(string x="") { s=x; }
+
+    bool operator==(STRING obj) {
+        return s == obj.s;
+    }
+
+    STRING operator+(STRING obj) {
+        return STRING(s + obj.s);
+    }
+};
+
+int main() {
+    STRING a("Hi "), b("There");
+
+    STRING c = a + b;
+    cout << c.s << endl;
+
+    if(a == b)
+        cout << "Equal";
+    else
+        cout << "Not Equal";
+}
