@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    int x;
+
+    void set(int x) {
+        this->x = x;   // this pointer
+    }
+
+    void show() {
+        cout << "Value: " << x << endl;
+    }
+};
+
+int main() {
+    A obj;
+    A *ptr = &obj;   // pointer to object
+
+    ptr->set(10);    // arrow operator
+    obj.show();      // dot operator
+
+    return 0;
+}
