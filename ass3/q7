@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    int x;
+};
+
+/* Pass by Value */
+A valueFun(A a) {
+    a.x = a.x + 5;
+    return a;
+}
+
+/* Pass by Reference */
+void refFun(A &a) {
+    a.x = a.x + 5;
+}
+
+int main() {
+
+    A obj1, obj2;
+
+    /* Initial values */
+    obj1.x = 10;
+    obj2.x = 20;
+
+    /* Pass by Value */
+    obj1 = valueFun(obj1);
+
+    /* Pass by Reference */
+    refFun(obj2);
+
+    cout << "After Pass by Value: ";
+    cout << obj1.x << endl;
+
+    cout << "After Pass by Reference: ";
+    cout << obj2.x << endl;
+
+    return 0;
+}
