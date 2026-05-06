@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+struct Student {
+    string name, degree, hostel;
+    int roll;
+    float cgpa;
+
+    void addDetails() {
+        cin >> name >> roll >> degree >> hostel >> cgpa;
+    }
+
+    void updateCGPA() {
+        cin >> cgpa;
+    }
+
+    void updateHostel() {
+        cin >> hostel;
+    }
+
+    void display() {
+        cout << name << " " << roll << " " << degree << " "
+             << hostel << " " << cgpa << endl;
+    }
+};
+
+int main() {
+    Student s;
+    s.addDetails();
+    s.display();
+}
