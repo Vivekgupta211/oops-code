@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int x = 10;   // global variable
+
+class A {
+public:
+    static int y;   // static variable
+
+    void show();    // function declaration
+};
+
+int A::y = 20;   // static variable definition
+
+void A::show() {   // function defined outside class
+    int x = 5;
+
+    cout << "Local x = " << x << endl;
+    cout << "Global x = " << ::x << endl;
+    cout << "Static y = " << A::y << endl;
+
+    std::cout << "Using std::cout";
+}
+
+int main() {
+    A obj;
+    obj.show();
+}
