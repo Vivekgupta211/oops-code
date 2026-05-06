@@ -1,0 +1,36 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    char str[100];
+
+    cout << "Enter string: ";
+    cin.getline(str, 100);
+
+    int len = 0;
+
+    while (str[len] != '\0') {
+        len++;
+    }
+
+    cout << "Length = " << len << endl;
+
+    ofstream fout("data.txt");
+    fout << str;
+    fout.close();
+
+    ifstream fin("data.txt");
+
+    char ch;
+
+    cout << "Stored characters are:\n";
+
+    while (fin.get(ch)) {
+        cout << ch;
+    }
+
+    fin.close();
+
+    return 0;
+}
