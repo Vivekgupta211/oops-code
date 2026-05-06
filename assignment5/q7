@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Speedometer {
+public:
+    int speed = 60;
+};
+
+class FuelGauge {
+public:
+    int fuel = 50;
+};
+
+class Thermometer {
+public:
+    int temp = 30;
+};
+
+class CarDashboard : public Speedometer, public FuelGauge, public Thermometer {
+public:
+    void show() {
+        cout << speed << " " << fuel << " " << temp;
+    }
+};
+
+int main() {
+    CarDashboard c;
+    c.show();
+}
