@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class Polygon {
+public:
+    int w, h;
+    void set_value(int a, int b) {
+        w = a; h = b;
+    }
+};
+
+class Rectangle : public Polygon {
+public:
+    int area() { return w * h; }
+};
+
+class Triangle : public Polygon {
+public:
+    int area() { return (w * h) / 2; }
+};
+
+int main() {
+    Polygon *p;
+    Rectangle r;
+    Triangle t;
+
+    p = &r;
+    p->set_value(10, 5);
+    cout << "Rectangle: " << r.area() << endl;
+
+    p = &t;
+    p->set_value(10, 5);
+    cout << "Triangle: " << t.area();
+
+    return 0;
+}
