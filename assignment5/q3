@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    int a = 1;
+protected:
+    int b = 2;
+private:
+    int c = 3;
+};
+
+class PublicD : public Base {
+public:
+    void show() {
+        cout << a << " " << b;
+    }
+};
+
+class ProtectedD : protected Base {
+public:
+    void show() {
+        cout << a << " " << b;
+    }
+};
+
+class PrivateD : private Base {
+public:
+    void show() {
+        cout << a << " " << b;
+    }
+};
+
+int main() {
+    PublicD p;
+    p.show();
+}
