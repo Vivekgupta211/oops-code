@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream fin("source.txt");
+    ofstream fout("target.txt");
+
+    char ch;
+
+    while (fin.get(ch)) {
+        fout << ch;
+    }
+
+    fin.close();
+    fout.close();
+
+    cout << "File copied";
+    return 0;
+}
