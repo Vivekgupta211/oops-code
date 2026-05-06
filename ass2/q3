@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+class Test {
+private:
+    void show() {
+        cout << "Private function called\n";
+    }
+
+public:
+    void display() {
+        show();  // calling private function
+    }
+};
+
+int main() {
+    Test t;
+    t.display();
+}
